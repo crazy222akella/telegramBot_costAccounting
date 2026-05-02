@@ -5,7 +5,8 @@ from db.models import async_main
 
 async def main():
     await async_main()
-    bot = Bot(token="8395321646:AAGP5ID7JzS4REpvBtvtONV_PgkLKXfAamI")
+    with open("C:/Users/mrand/Documents/token_telegramBot_trat/token.txt", "r") as file: token = file.readline()
+    bot = Bot(token="token")
     dp = Dispatcher()
     dp.include_router(router)
     await dp.start_polling(bot)
